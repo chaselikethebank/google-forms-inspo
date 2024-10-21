@@ -1,5 +1,8 @@
-﻿@* @page "/create"
+﻿@page "/create"
 @rendermode InteractiveServer
+@using ProjectReviewFormApp.Services
+
+
 
 <PageTitle>New Project Review</PageTitle>
 
@@ -75,16 +78,16 @@
     private string successMessage;
 
     [Inject]
-    private IFeedbackService feedbackService { get; set; }
+    private FeedbackService FeedbackService { get; set; } // Use FeedbackService instead of IFeedbackService
 
     private async Task HandleValidSubmit()
     {
         try
         {
-            // Add logic to save feedback to the database
-            await feedbackService.SaveFeedbackAsync(feedback);
+            // Save feedback to the database
+            await FeedbackService.SaveFeedbackAsync(feedback);
             
-            // After saving, show a success message
+            // Show success message
             successMessage = "Thank you for your feedback!";
             
             // Reset feedback form
@@ -92,8 +95,8 @@
         }
         catch (Exception ex)
         {
-            // Handle error (e.g., log it and show an error message)
+            // Handle error and show an error message
             successMessage = "An error occurred while saving your feedback. Please try again later.";
         }
     }
-} *@
+}
