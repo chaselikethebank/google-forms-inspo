@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/obj/Debug/net8.0/scopedcss/projectbundle/ProjectReviewFormApp.bundle.scp.css",
+      "PackagePath": "staticwebassets/ProjectReviewFormApp.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.ProjectReviewFormApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.ProjectReviewFormApp.props",
+      "PackagePath": "build\\ProjectReviewFormApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.ProjectReviewFormApp.props",
+      "PackagePath": "buildMultiTargeting\\ProjectReviewFormApp.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.ProjectReviewFormApp.props",
+      "PackagePath": "buildTransitive\\ProjectReviewFormApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
