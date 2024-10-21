@@ -4,6 +4,7 @@
 /Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/obj/Debug/net8.0/ProjectReviewFormApp.AssemblyInfo.cs
 /Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/obj/Debug/net8.0/ProjectReviewFormApp.csproj.CoreCompileInputs.cache
 /Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/obj/Debug/net8.0/ProjectReviewFormApp.MvcApplicationPartsAssemblyInfo.cache
+/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/obj/Debug/net8.0/ProjectReviewFormApp.sourcelink.json
 /Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/bin/Debug/net8.0/appsettings.Development.json
 /Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/bin/Debug/net8.0/appsettings.json
 /Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/bin/Debug/net8.0/ProjectReviewFormApp.staticwebassets.runtime.json

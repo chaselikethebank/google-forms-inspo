@@ -1,7 +1,40 @@
 ﻿@page "/"
+@using ProjectReviewFormApp.Services // Add this line
+@inject FeedbackService FeedbackService
 
-<PageTitle>Home</PageTitle>
+<h1>Feedbacks</h1>
 
-<h1>Hello, world!</h1>
+@if (feedbacks == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <ul>
+        @foreach (var feedback in feedbacks)
+        {
+            <li>
+                <strong>@feedback.FirstName @feedback.LastName</strong>: 
+                Helpfulness: @feedback.Helpfulness, 
+                Logistics Satisfaction: @feedback.LogisticsSatisfaction, 
+                Key Takeaways: @feedback.KeyTakeaways
+                (Submitted on @feedback.ReviewDate.ToShortDateString())
+            </li>
+        }
+    </ul>
+}
 
-Welcome to your new app.
+@code {
+    private List<Feedback> feedbacks;
+
+    // Constructor
+    public Home()
+    {
+        feedbacks = new List<Feedback>(); // Initialize with an empty list
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        feedbacks = await FeedbackService.GetFeedbacksAsync();
+    }
+}

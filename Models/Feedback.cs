@@ -5,6 +5,7 @@ namespace ProjectReviewFormApp.Models
 {
     public class Feedback
     {
+        
         public int Id { get; set; }
 
         [Range(1, 5, ErrorMessage = "Satisfaction must be between 1 and 5.")]
@@ -33,13 +34,11 @@ namespace ProjectReviewFormApp.Models
 
         public string ProjectName { get; set; }
 
-        // New properties added
-        [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]
-        public int Rating { get; set; }
+         
 
         public DateTime ReviewDate { get; set; }
 
-        // Constructor
+        // yeehaw Constructor
         public Feedback()
         {
             KeyTakeaways = string.Empty;

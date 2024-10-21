@@ -4,12 +4,16 @@
 using ProjectReviewFormApp.Components;
 using Microsoft.EntityFrameworkCore;
 using ProjectReviewFormApp.Data;
+using ProjectReviewFormApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add Razor Components and Interactive Server Components
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddScoped<FeedbackService>();
+
 
 // Configure SQLite database context with the connection string from appsettings.json
 builder.Services.AddDbContext<FeedbackContext>(options =>

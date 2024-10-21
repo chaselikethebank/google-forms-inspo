@@ -1,0 +1,99 @@
+﻿@* @page "/create"
+@rendermode InteractiveServer
+
+<PageTitle>New Project Review</PageTitle>
+
+<h1>Create a Project Review</h1>
+
+<EditForm Model="feedback" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <InputText id="firstName" @bind-Value="feedback.FirstName" class="form-control" />
+        <ValidationMessage For="@(() => feedback.FirstName)" />
+    </div>
+
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <InputText id="lastName" @bind-Value="feedback.LastName" class="form-control" />
+        <ValidationMessage For="@(() => feedback.LastName)" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <InputText id="email" @bind-Value="feedback.Email" type="email" class="form-control" />
+        <ValidationMessage For="@(() => feedback.Email)" />
+    </div>
+
+    <div class="form-group">
+        <label for="projectName">Project Name:</label>
+        <InputText id="projectName" @bind-Value="feedback.ProjectName" class="form-control" />
+        <ValidationMessage For="@(() => feedback.ProjectName)" />
+    </div>
+
+    <div class="form-group">
+        <label for="satisfaction">Satisfaction (1-5):</label>
+        <InputNumber id="satisfaction" @bind-Value="feedback.Satisfaction" class="form-control" />
+        <ValidationMessage For="@(() => feedback.Satisfaction)" />
+    </div>
+
+    <div class="form-group">
+        <label for="helpfulness">Helpfulness (1-5):</label>
+        <InputNumber id="helpfulness" @bind-Value="feedback.Helpfulness" class="form-control" />
+        <ValidationMessage For="@(() => feedback.Helpfulness)" />
+    </div>
+
+    <div class="form-group">
+        <label for="logisticsSatisfaction">Logistics Satisfaction (1-5):</label>
+        <InputNumber id="logisticsSatisfaction" @bind-Value="feedback.LogisticsSatisfaction" class="form-control" />
+        <ValidationMessage For="@(() => feedback.LogisticsSatisfaction)" />
+    </div>
+
+    <div class="form-group">
+        <label for="keyTakeaways">Key Takeaways:</label>
+        <InputTextArea id="keyTakeaways" @bind-Value="feedback.KeyTakeaways" class="form-control" />
+        <ValidationMessage For="@(() => feedback.KeyTakeaways)" />
+    </div>
+
+    <div class="form-group">
+        <label for="wouldRecommend">Would Recommend:</label>
+        <InputCheckbox id="wouldRecommend" @bind-Value="feedback.WouldRecommend" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit Review</button>
+
+    @if (!string.IsNullOrEmpty(successMessage))
+    {
+        <div class="alert alert-success mt-3">@successMessage</div>
+    }
+</EditForm>
+
+@code {
+    private Feedback feedback = new Feedback();
+    private string successMessage;
+
+    [Inject]
+    private IFeedbackService feedbackService { get; set; }
+
+    private async Task HandleValidSubmit()
+    {
+        try
+        {
+            // Add logic to save feedback to the database
+            await feedbackService.SaveFeedbackAsync(feedback);
+            
+            // After saving, show a success message
+            successMessage = "Thank you for your feedback!";
+            
+            // Reset feedback form
+            feedback = new Feedback();
+        }
+        catch (Exception ex)
+        {
+            // Handle error (e.g., log it and show an error message)
+            successMessage = "An error occurred while saving your feedback. Please try again later.";
+        }
+    }
+} *@

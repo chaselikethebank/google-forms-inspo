@@ -22,8 +22,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
+[/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/Components/Pages/Create.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9DcmVhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/cdemaster/cd.t/dotnet/ProjectReviewFormApp/Components/Pages/Error.razor]
