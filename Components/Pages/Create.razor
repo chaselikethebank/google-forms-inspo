@@ -75,10 +75,11 @@
 
 @code {
     private Feedback feedback = new Feedback();
-    private string successMessage;
+    private string successMessage = string.Empty;
+    
 
     [Inject]
-    private FeedbackService FeedbackService { get; set; } // Use FeedbackService instead of IFeedbackService
+    public required FeedbackService FeedbackService { get; set; }  
 
     private async Task HandleValidSubmit()
     {
@@ -86,16 +87,16 @@
         {
             // Save feedback to the database
             await FeedbackService.SaveFeedbackAsync(feedback);
-            
+
             // Show success message
             successMessage = "Thank you for your feedback!";
-            
+
             // Reset feedback form
             feedback = new Feedback();
         }
         catch (Exception ex)
         {
-            // Handle error and show an error message
+            Console.WriteLine($"Error: {ex.Message}");
             successMessage = "An error occurred while saving your feedback. Please try again later.";
         }
     }

@@ -1,8 +1,8 @@
 ﻿@page "/"
-@using ProjectReviewFormApp.Services // Add this line
+@using ProjectReviewFormApp.Services
 @inject FeedbackService FeedbackService
 
-<h1>Feedbacks</h1>
+<h1>Feedback from Stakeholders</h1>
 
 @if (feedbacks == null)
 {
@@ -10,18 +10,36 @@
 }
 else
 {
-    <ul>
+
+    <table class="table">
+    <thead>
+        <tr>
+                <th>Name</th>
+                <th>Project Name</th>
+
+                <th>Helpfuness</th>
+                <th>Logistics</th>
+                <th>Key Takeaways</th>
+                <th>Submitted on</th>
+        </tr>
+    </thead>
+    <tbody>
         @foreach (var feedback in feedbacks)
-        {
-            <li>
-                <strong>@feedback.FirstName @feedback.LastName</strong>: 
-                Helpfulness: @feedback.Helpfulness, 
-                Logistics Satisfaction: @feedback.LogisticsSatisfaction, 
-                Key Takeaways: @feedback.KeyTakeaways
-                (Submitted on @feedback.ReviewDate.ToShortDateString())
-            </li>
-        }
-    </ul>
+            {
+                <tr>
+                    <p>
+                        <th>@feedback.FirstName @feedback.LastName</th>
+                        <th>@feedback.ProjectName</th>
+                        <th> @feedback.Helpfulness </th>
+                        <th>@feedback.LogisticsSatisfaction </th>
+                        <th>@feedback.KeyTakeaways</th>
+                        <th>@feedback.ReviewDate.ToShortDateString()</th>
+                    </p>
+                </tr>
+            }
+        </tbody>
+    </table>
+
 }
 
 @code {
